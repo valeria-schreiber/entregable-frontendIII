@@ -27,7 +27,7 @@ export default function Item({id, nombre, descripcion, stock, adding}) {
       <h5>cantidad: <span>{(cantidad > 0 ? cantidad : "AGOTADO")}</span></h5>
 
     
-      <button onClick={() => {setStock()}}>COMPRAR</button>
+      <button disabled={cantidad === 0} onClick={() => {setStock();adding()}}>{cantidad === 0 ? "AGOTADO" : "COMPRAR"}</button>
     </div>
   )
 }
